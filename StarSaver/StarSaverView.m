@@ -31,12 +31,26 @@
   @property (assign) NSInteger novaProbability;  // Probability for Nova (1 in X chance)
   @property (assign) NSInteger animationTiming;  // Animation timing in milliseconds
 
+  // Unique per-instance ID, and stop/teardown bookkeeping.
+  // Works around macOS (Sonoma+) bugs where `stopAnimation` is not
+  // reliably called, and where stale/duplicate instances or the host
+  // process are not reliably torn down.
+  @property (nonatomic, copy) NSString *instanceID;
+  @property (nonatomic, assign, getter=isLameDuck) BOOL lameDuck;
+  @property (nonatomic, strong) NSTimer *forceExitTimer;
+
   // Private methods
   - (NSPoint)randomPosition;
   - (NSPoint)randomOffset;
   - (NSRect)getStarRect:(Star*)star;
   - (void)internalInit;
   - (BOOL)isMiniPreview;
+  - (void)registerForLifecycleNotifications;
+  - (void)handleInstanceDidStart:(NSNotification *)notification;
+  - (void)handleScreenSaverWillStop:(NSNotification *)notification;
+  - (void)deactivate;
+  - (void)scheduleForceExit;
+  - (void)forceExit;
 @end
 
 @implementation StarSaverView
@@ -81,7 +95,10 @@
   NSLog(@"StarSaverView internalInit");
   #endif
   self.isRunning = false;
-  
+  self.instanceID = [[NSUUID UUID] UUIDString];
+  self.lameDuck = NO;
+  [self registerForLifecycleNotifications];
+
   // ----- Initialize RandomSeed -----
 
   #ifdef DEBUG
@@ -347,9 +364,15 @@
   NSLog(@"StarSaverView startAnimation");
   #endif
   [super startAnimation];
- 
+
   [self loadPreferences];
-  
+
+  // A fresh start means the host process is alive and reusing this view;
+  // cancel any pending safety-net exit from a previous stop.
+  [self.forceExitTimer invalidate];
+  self.forceExitTimer = nil;
+  self.lameDuck = NO;
+
   self.isRunning = YES;
   [self setNeedsDisplay:YES];  // redraw the whole screen
 }
@@ -360,8 +383,9 @@
   NSLog(@"StarSaverView stopAnimation");
   #endif
   [super stopAnimation];
-  
-  self.isRunning = NO;
+
+  [self deactivate];
+  [self scheduleForceExit];
 }
 
 /* ------------------------------
@@ -464,6 +488,111 @@
 
   // Force the star area to redraw
   [self setNeedsDisplayInRect:[self getStarRect:star]];
+}
+
+// ==================================================
+#pragma mark - Lifecycle Workarounds
+//
+// macOS Sonoma+ has known bugs where `stopAnimation` is not reliably
+// called, duplicate instances can be spawned without the old ones being
+// torn down, and the host `legacyScreenSaver` process can fail to
+// terminate after all views have stopped. The methods below are
+// self-contained workarounds for those cases.
+// ==================================================
+
+/* ------------------------------
+ * Subscribe to the notifications needed to detect a real stop, and
+ * announce this instance so any older sibling instance can deactivate.
+ * ------------------------------ */
+- (void)registerForLifecycleNotifications {
+  NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+
+  [nc addObserver:self
+         selector:@selector(handleInstanceDidStart:)
+             name:kStarSaverInstanceDidStartNotification
+           object:nil];
+
+  // Sonoma+ sometimes fails to call `stopAnimation`; this notification is
+  // the more reliable signal that the screen saver is actually stopping.
+  [nc addObserver:self
+         selector:@selector(handleScreenSaverWillStop:)
+             name:@"com.apple.screensaver.willstop"
+           object:nil];
+
+  // Any instance already alive will see this and deactivate itself, since
+  // it's necessarily older than whichever instance is announcing itself now.
+  [nc postNotificationName:kStarSaverInstanceDidStartNotification object:self.instanceID];
+}
+
+/* ------------------------------
+ * A newer sibling instance has just started; this one has been superseded.
+ * ------------------------------ */
+- (void)handleInstanceDidStart:(NSNotification *)notification {
+  NSString *startedInstanceID = notification.object;
+  if (startedInstanceID != nil && ![startedInstanceID isEqualToString:self.instanceID]) {
+    #ifdef DEBUG
+    NSLog(@"StarSaverView superseded by instance %@, deactivating", startedInstanceID);
+    #endif
+    [self deactivate];
+  }
+}
+
+/* ------------------------------
+ * ------------------------------ */
+- (void)handleScreenSaverWillStop:(NSNotification *)notification {
+  #ifdef DEBUG
+  NSLog(@"StarSaverView handleScreenSaverWillStop");
+  #endif
+  [self deactivate];
+  [self scheduleForceExit];
+}
+
+/* ------------------------------
+ * Stop animating/drawing and stop listening for further start
+ * announcements. Idempotent.
+ * ------------------------------ */
+- (void)deactivate {
+  if (self.lameDuck) {
+    return;
+  }
+  self.lameDuck = YES;
+  self.isRunning = NO;
+  [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                   name:kStarSaverInstanceDidStartNotification
+                                                 object:nil];
+}
+
+/* ------------------------------
+ * Safety net: if the host process fails to terminate on its own after
+ * this view has stopped, exit directly rather than leaking a zombie
+ * process that wastes CPU/memory.
+ * ------------------------------ */
+- (void)scheduleForceExit {
+  if (self.forceExitTimer != nil) {
+    return;
+  }
+  self.forceExitTimer = [NSTimer scheduledTimerWithTimeInterval:65.0
+                                                           target:self
+                                                         selector:@selector(forceExit)
+                                                         userInfo:nil
+                                                          repeats:NO];
+}
+
+/* ------------------------------
+ * ------------------------------ */
+- (void)forceExit {
+  #ifdef DEBUG
+  NSLog(@"StarSaverView forceExit: host process did not terminate in time, exiting directly");
+  #endif
+  // `exit(0)` rather than `[NSApplication terminate:]` to avoid black-screen
+  // races during teardown.
+  exit(0);
+}
+
+/* ------------------------------ */
+- (void)dealloc {
+  [self.forceExitTimer invalidate];
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 // ==================================================
