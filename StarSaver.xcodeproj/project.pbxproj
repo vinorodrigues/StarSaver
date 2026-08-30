@@ -3,42 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		273FCE9E2CC1960E0042154F /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 273FCE9D2CC1960E0042154F /* thumbnail.png */; };
 		2751549A2CC7C836008DC4BF /* ConfigureSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 275154992CC7C836008DC4BF /* ConfigureSheet.xib */; };
-		2751549E2CC7D191008DC4BF /* ConfigureSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2751549C2CC7D191008DC4BF /* ConfigureSheetController.h */; };
-		2751549F2CC7D191008DC4BF /* ConfigureSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2751549D2CC7D191008DC4BF /* ConfigureSheetController.m */; };
-		275154A42CC7DB8C008DC4BF /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 275154A22CC7DB8C008DC4BF /* Constants.h */; };
-		275154A92CC7E277008DC4BF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 275154A82CC7E277008DC4BF /* Constants.m */; };
 		27A6C0542CC3D9D40060289D /* StarSaver.icns in Resources */ = {isa = PBXBuildFile; fileRef = 27A6C0532CC3D9D40060289D /* StarSaver.icns */; };
-		27B76C3A2CC02230007DC752 /* StarSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B76C392CC02230007DC752 /* StarSaverView.m */; };
 		27B76C442CC022FE007DC752 /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B76C432CC022FE007DC752 /* star1.png */; };
 		27B76C4A2CC0236C007DC752 /* star3.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B76C462CC0236C007DC752 /* star3.png */; };
 		27B76C4B2CC0236C007DC752 /* star4.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B76C472CC0236C007DC752 /* star4.png */; };
 		27B76C4C2CC0236C007DC752 /* star2.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B76C482CC0236C007DC752 /* star2.png */; };
 		27B76C4D2CC0236C007DC752 /* star5.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B76C492CC0236C007DC752 /* star5.png */; };
+		6D1142ADDAC8F84F9DFC4B8E /* StarSaverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221A887575BA02C57F98DA0 /* StarSaverView.swift */; };
+		AC596A0465B27376C3436DB9 /* ConfigureSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F669E9A49A357062B5F0D2BC /* ConfigureSheetController.swift */; };
+		ADE74CAD78D8F570CA5F76CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F745AD7516C8DD38D4718 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		123F745AD7516C8DD38D4718 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		273FCE9D2CC1960E0042154F /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 		275154992CC7C836008DC4BF /* ConfigureSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigureSheet.xib; sourceTree = "<group>"; };
-		2751549C2CC7D191008DC4BF /* ConfigureSheetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigureSheetController.h; sourceTree = "<group>"; };
-		2751549D2CC7D191008DC4BF /* ConfigureSheetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigureSheetController.m; sourceTree = "<group>"; };
-		275154A22CC7DB8C008DC4BF /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		275154A82CC7E277008DC4BF /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		27A6C0532CC3D9D40060289D /* StarSaver.icns */ = {isa = PBXFileReference; explicitFileType = image.icns; path = StarSaver.icns; sourceTree = "<group>"; };
 		27B76C342CC02230007DC752 /* StarSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		27B76C392CC02230007DC752 /* StarSaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarSaverView.m; sourceTree = "<group>"; wrapsLines = 0; };
 		27B76C3B2CC02230007DC752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; wrapsLines = 0; };
 		27B76C432CC022FE007DC752 /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
 		27B76C462CC0236C007DC752 /* star3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star3.png; sourceTree = "<group>"; };
 		27B76C472CC0236C007DC752 /* star4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star4.png; sourceTree = "<group>"; };
 		27B76C482CC0236C007DC752 /* star2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star2.png; sourceTree = "<group>"; };
 		27B76C492CC0236C007DC752 /* star5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star5.png; sourceTree = "<group>"; };
-		27B76C652CC03F92007DC752 /* StarSaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarSaverView.h; sourceTree = "<group>"; wrapsLines = 0; };
+		A221A887575BA02C57F98DA0 /* StarSaverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarSaverView.swift; sourceTree = "<group>"; };
+		F669E9A49A357062B5F0D2BC /* ConfigureSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureSheetController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,37 +84,21 @@
 			children = (
 				273FCEA02CC1961F0042154F /* Assets */,
 				27B76C3B2CC02230007DC752 /* Info.plist */,
-				27B76C652CC03F92007DC752 /* StarSaverView.h */,
-				27B76C392CC02230007DC752 /* StarSaverView.m */,
+				A221A887575BA02C57F98DA0 /* StarSaverView.swift */,
 				275154992CC7C836008DC4BF /* ConfigureSheet.xib */,
-				2751549C2CC7D191008DC4BF /* ConfigureSheetController.h */,
-				2751549D2CC7D191008DC4BF /* ConfigureSheetController.m */,
-				275154A22CC7DB8C008DC4BF /* Constants.h */,
-				275154A82CC7E277008DC4BF /* Constants.m */,
+				F669E9A49A357062B5F0D2BC /* ConfigureSheetController.swift */,
+				123F745AD7516C8DD38D4718 /* Constants.swift */,
 			);
 			path = StarSaver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		27B76C2F2CC02230007DC752 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				275154A42CC7DB8C008DC4BF /* Constants.h in Headers */,
-				2751549E2CC7D191008DC4BF /* ConfigureSheetController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		27B76C332CC02230007DC752 /* StarSaver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27B76C3E2CC02230007DC752 /* Build configuration list for PBXNativeTarget "StarSaver" */;
 			buildPhases = (
-				27B76C2F2CC02230007DC752 /* Headers */,
 				27B76C302CC02230007DC752 /* Sources */,
 				27B76C312CC02230007DC752 /* Frameworks */,
 				27B76C322CC02230007DC752 /* Resources */,
@@ -139,7 +118,8 @@
 		27B76C2B2CC0222F007DC752 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1240;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2660;
 				ORGANIZATIONNAME = com.silvinor;
 				TargetAttributes = {
 					27B76C332CC02230007DC752 = {
@@ -188,19 +168,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2751549F2CC7D191008DC4BF /* ConfigureSheetController.m in Sources */,
-				27B76C3A2CC02230007DC752 /* StarSaverView.m in Sources */,
-				275154A92CC7E277008DC4BF /* Constants.m in Sources */,
+				AC596A0465B27376C3436DB9 /* ConfigureSheetController.swift in Sources */,
+				6D1142ADDAC8F84F9DFC4B8E /* StarSaverView.swift in Sources */,
+				ADE74CAD78D8F570CA5F76CF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		27B76C3C2CC02230007DC752 /* Debug */ = {
+		0386CD755DAE8D97DC779AB7 /* Release-Intel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -232,9 +214,94 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.5.0;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OBJROOT = "$(SRCROOT)/build";
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "$(SRCROOT)/build";
+				VERSION_INFO_PREFIX = v;
+				VERSION_INFO_SUFFIX = "-beta";
+			};
+			name = "Release-Intel";
+		};
+		24AD328E2D8E544CD4F7350C /* Release-Intel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
+				INFOPLIST_FILE = StarSaver/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Star Saver";
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silvinor.StarSaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = "Release-Intel";
+		};
+		27B76C3C2CC02230007DC752 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0.5.0;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -253,9 +320,13 @@
 				MARKETING_VERSION = 0.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				OBJROOT = "$(SRCROOT)/build";
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SYMROOT = "$(SRCROOT)/build";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_VERSION = 5.0;
 				VERSION_INFO_PREFIX = v;
 				VERSION_INFO_SUFFIX = "-beta";
 			};
@@ -265,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -296,9 +368,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.5.0;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -311,9 +385,14 @@
 				MARKETING_VERSION = 0.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OBJROOT = "$(SRCROOT)/build";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SYMROOT = "$(SRCROOT)/build";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 				VERSION_INFO_PREFIX = v;
 				VERSION_INFO_SUFFIX = "-beta";
 			};
@@ -325,9 +404,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = StarSaver/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Saver";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.silvinor.StarSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
@@ -340,14 +421,100 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = StarSaver/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Star Saver";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.silvinor.StarSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
+		};
+		C42927F6AACD21688F5CA6AE /* Release-AppleSilicon */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
+				INFOPLIST_FILE = StarSaver/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Star Saver";
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silvinor.StarSaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = "Release-AppleSilicon";
+		};
+		D2CF329F911679A8EFE629AF /* Release-AppleSilicon */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0.5.0;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OBJROOT = "$(SRCROOT)/build";
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "$(SRCROOT)/build";
+				VERSION_INFO_PREFIX = v;
+				VERSION_INFO_SUFFIX = "-beta";
+			};
+			name = "Release-AppleSilicon";
 		};
 /* End XCBuildConfiguration section */
 
@@ -357,6 +524,8 @@
 			buildConfigurations = (
 				27B76C3C2CC02230007DC752 /* Debug */,
 				27B76C3D2CC02230007DC752 /* Release */,
+				0386CD755DAE8D97DC779AB7 /* Release-Intel */,
+				D2CF329F911679A8EFE629AF /* Release-AppleSilicon */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -366,6 +535,8 @@
 			buildConfigurations = (
 				27B76C3F2CC02230007DC752 /* Debug */,
 				27B76C402CC02230007DC752 /* Release */,
+				24AD328E2D8E544CD4F7350C /* Release-Intel */,
+				C42927F6AACD21688F5CA6AE /* Release-AppleSilicon */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
